@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import useAxiosFetch from '../../../hooks/useAxiosFetch'
-import Card from './card'
+import Card from './Card'
 
 const PopularClasses = () => {
     const axiosFecth=useAxiosFetch()
