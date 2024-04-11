@@ -6,6 +6,7 @@ import Swal from 'sweetalert2';
 // import photoURL from '../../assets/homein/girl.jpg'
 import { FaBars } from 'react-icons/fa'
 import { motion, AnimatePresence } from 'framer-motion'
+import yogaLogo from '../headers/yoga_logo.png';
 import { AuthContext } from '../../utilities/Providers/AuthProviders';
 const navLinks = [
     { name: 'Home', route: '/' },
@@ -123,7 +124,9 @@ const NavBar = () => {
                     {/* logo */}
                     <div onClick={() => navigate('/')} className='flex-shrink-0 cursor-pointer pl-7 md:p-0 flex items-center'>
                         <div>
-                            <h1 className='text-2xl inline-flex gap-3 items-center font-bold '>YogaWebsite <img src="/yoga logo.png" alt="" className='w-8 h-8'></img></h1>
+                            <h1 className='text-2xl inline-flex gap-3 items-center font-bold '>YogaWebsite 
+                            <img src={yogaLogo} alt="Yoga Logo" className='w-8 h-8' />
+                            </h1>
                             <p className='font-bold text-[13px] tracking-[8px] '>Quick Explore</p>
                         </div>
                     </div>

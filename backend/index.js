@@ -10,11 +10,11 @@ const port = process.env.port || 5000;
 
 // Middleware
 app.use(cors(
-  {
-      origin: ["https://deploy-meifh-1whq.ve|cel.app"],
-      methods: ["POST", "GET"],
-      credentials: true
-  }
+  // {
+  //     origin: ["https://deploy-meifh-1whq.ve|cel.app"],
+  //     methods: ["POST", "GET"],
+  //     credentials: true
+  // }
 ));
 app.use(express.json());
 
