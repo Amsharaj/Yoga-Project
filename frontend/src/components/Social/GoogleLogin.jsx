@@ -22,7 +22,7 @@ const GoogleLogin = () => {
                     
                 }
                 if(user.email && user.displayName){
-                    return axios.post('http://localhost:5000/new-user',userImp).then(()=>{
+                    return axios.post('https://yoga-project.onrender.com/new-user',userImp).then(()=>{
                       navigate('/')  
                       return "Registration Successfully"
                     }).catch((err)=>{

@@ -3,7 +3,7 @@ import axios from 'axios'
 
 const useAxiosFetch = () => {
     const axiosInstance = axios.create({
-        baseURL: 'http://localhost:5000/',
+        baseURL: 'https://yoga-project.onrender.com/',
       });
 
       useEffect(()=>{

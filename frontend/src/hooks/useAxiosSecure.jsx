@@ -7,7 +7,7 @@ const useAxiosSecure = () => {
   const navigate=useNavigate()
 
   const axiosSecure=axios.create({
-    baseURL: 'http://localhost:5000'
+    baseURL: 'https://yoga-project.onrender.com'
   })
   useEffect(()=>{
     const requestInterceptor=axiosSecure.interceptors.request.use((config)=>{

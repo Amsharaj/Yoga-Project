@@ -76,7 +76,8 @@ const AuthProviders = ({children}) => {
         const unsubscribe=Auth.onAuthStateChanged((user)=>{
             setUser(user)
             if(user){
-                axios.post('http://localhost:5000/api/set-token',{email:user.email,name:user.displayName})
+               // https://yoga-project.onrender.com
+                axios.post('https://yoga-project.onrender.com/api/set-token',{email:user.email,name:user.displayName})
                 .then((data)=>{
                     if(data.data.token){
                         localStorage.setItem('token',data.data.token )
