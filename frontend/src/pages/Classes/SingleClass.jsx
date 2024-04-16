@@ -43,9 +43,9 @@ const SingleClass = () => {
 
                     toast.promise(
                         axiosSecure.post('/add-to-cart', data)
-                        .then(res => {
-                            console.log(res.data);
-                        })
+                            .then(res => {
+                                console.log(res.data);
+                            })
 
                         , {
                             pending: 'Selecting...',
@@ -209,7 +209,7 @@ const SingleClass = () => {
                                                         <h4 className=" text-2xl">What You will Learn?</h4>
                                                         <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5 mt-5">
                                                             <div className=" bg-white  rounded px-5 py-[18px] flex   shadow-box2 space-x-[10px] items-center">
-                                                                <span  className="flex-none h-5 w-5">
+                                                                <span className="flex-none h-5 w-5">
                                                                     <img src="/logo.png" alt="" />
                                                                 </span>
                                                                 <span className="flex-1 text-black">
@@ -282,7 +282,7 @@ const SingleClass = () => {
                                                 className=" block w-full h-full object-cover rounded "
                                             />
                                             <div className=" absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-                                                <img src="/play.png" alt="" onClick={() => window.location.href = course.videoLink}/>
+                                                <img src="/play.png" alt="" onClick={() => window.location.href = course.videoLink} />
                                             </div>
                                         </a>
                                         <h3>₹{course.price}</h3>
@@ -415,7 +415,7 @@ const SingleClass = () => {
                                                         Greatest Passion In...
                                                     </div>
                                                     <span className=" text-secondary font-semibold">
-                                                    ₹3800.00
+                                                        ₹3800.00
                                                     </span>
                                                 </div>
                                             </li>
@@ -434,7 +434,7 @@ const SingleClass = () => {
                                                         Greatest Passion In...
                                                     </div>
                                                     <span className=" text-secondary font-semibold">
-                                                    ₹3800.00
+                                                        ₹3800.00
                                                     </span>
                                                 </div>
                                             </li>
@@ -453,7 +453,7 @@ const SingleClass = () => {
                                                         Greatest Passion In...
                                                     </div>
                                                     <span className=" text-secondary font-semibold">
-                                                    ₹3800.00
+                                                        ₹3800.00
                                                     </span>
                                                 </div>
                                             </li>

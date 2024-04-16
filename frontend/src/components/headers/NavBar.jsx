@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import {Switch} from '@mui/material';
+import { Switch } from '@mui/material';
 import Swal from 'sweetalert2';
 // import photoURL from '../../assets/homein/girl.jpg'
 import { FaBars } from 'react-icons/fa'
@@ -124,10 +124,10 @@ const NavBar = () => {
                     {/* logo */}
                     <div onClick={() => navigate('/')} className='flex-shrink-0 cursor-pointer pl-7 md:p-0 flex items-center'>
                         <div>
-                            <h1 className='text-2xl inline-flex gap-3 items-center font-bold '>YogaWebsite 
-                            <img src={yogaLogo} alt="Yoga Logo" className='w-8 h-8' />
+                            <h1 className='text-2xl inline-flex gap-3 items-center font-bold dark:text-white'>YogaWebsite
+                                <img src={yogaLogo} alt="Yoga Logo" className='w-8 h-8' />
                             </h1>
-                            <p className='font-bold text-[13px] tracking-[8px] '>Quick Explore</p>
+                            <p className='font-bold text-[13px] tracking-[8px] dark:text-white'>Quick Explore</p>
                         </div>
                     </div>
                     {/* mobile menu items */}

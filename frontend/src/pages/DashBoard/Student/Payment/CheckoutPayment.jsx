@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import useAxiosSecure from '../../../../hooks/useAxiosSecure';
 import useUser from '../../../../hooks/useUsers';
-const CheckoutPayment = ({ price , cartItm }) => {
-    const URL =`https://yoga-project.onrender.com/payment-info?${cartItm&&`classId=${cartItm}`}`
+const CheckoutPayment = ({ price, cartItm }) => {
+    const URL = `https://yoga-project.onrender.com/payment-info?${cartItm && `classId=${cartItm}`}`
     console.log(URL)
     const stripe = useStripe();
     const elements = useElements();
@@ -98,8 +98,8 @@ const CheckoutPayment = ({ price , cartItm }) => {
                     paymentStatus,
                     userName,
                     userEmail,
-                    classesId : cartItm ? [cartItm] : cart, 
-                    date : new Date()
+                    classesId: cartItm ? [cartItm] : cart,
+                    date: new Date()
                 }
                 // axiosSecure.post('/payment-info', data)
                 fetch(URL, {
@@ -133,31 +133,31 @@ const CheckoutPayment = ({ price , cartItm }) => {
         <>
             <div className="text-center">
                 <h1 className="text-2xl font-bold">Payment Amount : <span className='text-secondary'>₹{price}</span></h1>
-            
-            <form onSubmit={handleSubmit}>
-                
-                <CardElement
-                    options={{
-                        style: {
-                            base: {
-                                fontSize: '16px',
-                                color: '#424770',
-                                '::placeholder': {
-                                    color: '#aab7c4',
+
+                <form onSubmit={handleSubmit}>
+
+                    <CardElement
+                        options={{
+                            style: {
+                                base: {
+                                    fontSize: '16px',
+                                    color: '#424770',
+                                    '::placeholder': {
+                                        color: '#aab7c4',
+                                    },
+                                },
+                                invalid: {
+                                    color: '#9e2146',
                                 },
                             },
-                            invalid: {
-                                color: '#9e2146',
-                            },
-                        },
-                    }}
-                />
-                <button type="submit" disabled={!stripe || !clientSecret || isLoading}>
-                    Pay
-                </button>
-                {message && <p className="text-red-500">{message}</p>}
-                {succeeded && <p className="text-green-500">{succeeded}</p>}
-            </form>
+                        }}
+                    />
+                    <button type="submit" disabled={!stripe || !clientSecret || isLoading}>
+                        Pay
+                    </button>
+                    {message && <p className="text-red-500">{message}</p>}
+                    {succeeded && <p className="text-green-500">{succeeded}</p>}
+                </form>
             </div>
         </>
     );

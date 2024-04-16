@@ -118,7 +118,7 @@ export const router = createBrowserRouter([
       {
         path: 'my-pending',
         element: <InstructorRoute><PendingClass /></InstructorRoute>
-        
+
       },
       {
         path: 'my-approved',

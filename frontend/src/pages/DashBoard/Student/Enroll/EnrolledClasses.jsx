@@ -7,7 +7,7 @@ import { ScaleLoader } from 'react-spinners';
 const EnrolledClasses = () => {
     const [data, setData] = useState([]);
     const [page, setPage] = useState(1);
-    const [paginatedData, setPaginatedData] = useState([]); 
+    const [paginatedData, setPaginatedData] = useState([]);
     const [loading, setLoading] = useState(true);
     const { currentUser } = useUser();
     let itemPerPage = 2;

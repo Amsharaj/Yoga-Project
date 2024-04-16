@@ -11,7 +11,7 @@ const ManageClasses = () => {
     const navigate = useNavigate();
     const axiosFetch = useAxiosFetch();
     const axiosSecure = useAxiosSecure();
-    const [classes, setClasses] = useState([]); 
+    const [classes, setClasses] = useState([]);
     const [page, setPage] = useState(1);
     const [paginatedData, setPaginatedData] = useState([]);
     const itemPerPage = 5;
@@ -24,7 +24,7 @@ const ManageClasses = () => {
             .catch(err => console.log(err))
     }, [])
 
-    useEffect(()=>{
+    useEffect(() => {
         let lastIndex = page * itemPerPage;
         const firstIndex = lastIndex - itemPerPage;
         if (lastIndex > classes.length) {
@@ -32,7 +32,7 @@ const ManageClasses = () => {
         }
         const currentData = classes.slice(firstIndex, lastIndex);
         setPaginatedData(currentData);
-    },[page,totalPage])
+    }, [page, totalPage])
 
 
     const theme = createTheme({

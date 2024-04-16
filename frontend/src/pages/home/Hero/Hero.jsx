@@ -14,17 +14,17 @@ const Hero = () => {
                         </div>
                         <div className='flex flex-wrap items-center gap-5'>
                             <Link to='/register'>
-                            <button className='px-7 py-3 rounded-lg bg-secondary font-bold uppercase'>Join Today</button>
+                                <button className='px-7 py-3 rounded-lg bg-secondary font-bold uppercase'>Join Today</button>
                             </Link>
                             <Link to='/classes'>
-                            <button className='px-7 py-3 rounded-lg border hover:bg-secondary font-bold uppercase'>View Classes</button>
+                                <button className='px-7 py-3 rounded-lg border hover:bg-secondary font-bold uppercase'>View Classes</button>
                             </Link>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    ) 
+    )
 }
 
 export default Hero

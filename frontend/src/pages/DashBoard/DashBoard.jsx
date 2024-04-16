@@ -14,11 +14,11 @@ const Dashboard = () => {
 
     if (isLoading) {
         return <div className='flex justify-center items-center h-screen'>
-        <HashLoader
-            color="#FF1949"
-            size={50}
-        />
-    </div>
+            <HashLoader
+                color="#FF1949"
+                size={50}
+            />
+        </div>
     }
     return <DashboardNavigate />;
 };

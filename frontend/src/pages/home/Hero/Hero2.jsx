@@ -13,12 +13,12 @@ const Hero2 = () => {
                             <p>Yoga is the ultimate practice. It simultaneously stimulates our inner light and quiets our overactive minds. It is both energy and rest. Yin and Yang. We feel the burn and find our bliss.</p>
                         </div>
                         <div className='flex flex-wrap items-center gap-5'>
-                        <Link to='/register'>
-                            <button className='px-7 py-3 rounded-lg bg-secondary font-bold uppercase'>Join Today</button>
+                            <Link to='/register'>
+                                <button className='px-7 py-3 rounded-lg bg-secondary font-bold uppercase'>Join Today</button>
                             </Link>
-                            
+
                             <Link to='/classes'>
-                            <button className='px-7 py-3 rounded-lg border hover:bg-secondary font-bold uppercase'>View Classes</button>
+                                <button className='px-7 py-3 rounded-lg border hover:bg-secondary font-bold uppercase'>View Classes</button>
                             </Link>
                         </div>
                     </div>

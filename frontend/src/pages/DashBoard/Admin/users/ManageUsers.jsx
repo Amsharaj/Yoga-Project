@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 const ManageUsers = () => {
     const navigate = useNavigate();
     const axiosFetch = useAxiosFetch();
-    const axiosSecure  = useAxiosSecure();
+    const axiosSecure = useAxiosSecure();
     const [users, setUsers] = useState([]);
     useEffect(() => {
         axiosFetch.get('/users')
@@ -30,11 +30,11 @@ const ManageUsers = () => {
         }).then((result) => {
             if (result.isConfirmed) {
                 axiosSecure.delete(`/delete-user/${id}`)
-                .then(res => { 
-                    console.log(res.data)
-                    
-                })
-                .catch(err => console.log(err))
+                    .then(res => {
+                        console.log(res.data)
+
+                    })
+                    .catch(err => console.log(err))
 
 
             }
@@ -73,7 +73,7 @@ const ManageUsers = () => {
                                                 <td className="whitespace-nowrap px-6 py-4">{user.name}</td>
                                                 <td className="whitespace-nowrap px-6 py-4">{user.role}</td>
                                                 <td className="whitespace-nowrap px-6 py-4">
-                                                    <span onClick={()=>navigate(`/dashboard/update-user/${user._id}`)} className='inline-flex items-center gap-2 cursor-pointer bg-green-500 py-1 rounded-md px-2 text-white'>Update <GrUpdate className='text-white' /></span>
+                                                    <span onClick={() => navigate(`/dashboard/update-user/${user._id}`)} className='inline-flex items-center gap-2 cursor-pointer bg-green-500 py-1 rounded-md px-2 text-white'>Update <GrUpdate className='text-white' /></span>
                                                 </td>
                                                 <td className="whitespace-nowrap px-6 py-4">
                                                     <span onClick={() => handleDelete(user._id)} className='inline-flex items-center gap-2 cursor-pointer bg-red-600 py-1 rounded-md px-2 text-white'>Delete <FcDeleteDatabase /></span>

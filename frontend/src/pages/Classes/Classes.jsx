@@ -51,30 +51,30 @@ const Classes = () => {
           }
           toast.promise(
             axiosSecure.post('/add-to-cart', data)
-            .then(res => {
-              console.log(res.data)
-              
-            })
+              .then(res => {
+                console.log(res.data)
+
+              })
             , {
-            pending: 'Selecting ...',
-            success: {
-              render({ data }) {
-                return "Selected successfully"
+              pending: 'Selecting ...',
+              success: {
+                render({ data }) {
+                  return "Selected successfully"
+                }
+              },
+              error: {
+                render({ data }) {
+                  return `Error: ${data.message}`
+                }
               }
-            },
-            error: {
-              render({ data }) {
-                return `Error: ${data.message}`
-              }
-            }
-          });
+            });
         }
       })
   }
   return (
     <div>
       <div className='mt-20 pt-3'>
-        <h1 className='text-4xl font-bold text-center text-secondary'>Classes</h1>
+        <h1 className='text-4xl font-bold text-center text-secondary dark:text-white'>Classes</h1>
       </div>
       <div className='my-16 w-[90%] mx-auto grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8'>
         {

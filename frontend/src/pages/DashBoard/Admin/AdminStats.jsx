@@ -2,16 +2,16 @@ import React, { useEffect, useState } from 'react';
 import { Fade, Slide } from "react-awesome-reveal";
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 const AdminStats = ({ users }) => {
-  const [data , setData] = useState({}); 
+  const [data, setData] = useState({});
   console.log("🚀 ~ file: AdminStats.jsx:6 ~ AdminStats ~ data:", data)
   const axiosSecure = useAxiosSecure();
-  useEffect(()=>{
+  useEffect(() => {
     axiosSecure.get('/admin-status')
-    .then(res => { 
-      setData(res.data)
-    })
-    .catch(err => console.log(err))
-  },[])
+      .then(res => {
+        setData(res.data)
+      })
+      .catch(err => console.log(err))
+  }, [])
   return (
     <Slide>
       <div className="grid grid-cols-1 gap-4 px-4 mt-8 sm:grid-cols-4 sm:px-8">

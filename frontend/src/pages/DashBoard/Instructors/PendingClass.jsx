@@ -37,28 +37,28 @@ const PendingClass = () => {
                                 {
                                     pendingClasses.map((cls, index) => (
                                         // <Slide duration={1000} key={index} className='mb-5 hover:ring ring-secondary duration-200 focus:ring rounded-lg'>
-                                            <div className="bg-white flex  rounded-lg gap-8  shadow p-4">
-                                                <div className="">
-                                                    <img className='max-h-[200px] max-w-[300px]' src={cls.image} alt="" />
-                                                </div>
-                                                <div className="w-full">
-                                                    <h1 className='text-[21px] font-bold text-secondary border-b pb-2 mb-2'>{cls.name}</h1>
-                                                    <div className="flex gap-5">
-                                                        <div className="w-full">
-                                                            <h1 className='font-bold mb-3'>Some Info : </h1>
-                                                            <h1 className='text-secondary my-2'><span className='text-black '>Total Student</span> : {cls.totalEnrolled ? cls.totalEnrolled : 0}</h1>
-                                                            <h1 className='text-secondary'><span className='text-black '>Total Seats</span> : {cls.availableSeats}</h1>
-                                                            <h1 className='text-secondary my-2'><span className='text-black '>Status</span> : <span className={`font-bold ${cls.status === 'pending' ? 'text-orange-400' : cls.status === 'checking' ? 'text-yellow-300' : cls.status === 'approved' ? 'text-green-500' : 'text-red-600'}`}>{cls.status}</span></h1>
-                                                        </div>
-                                                        <div className="">
-                                                            <h1 className='font-bold mb-3'>{cls.description}</h1>
-                                                            <h1 className='text-secondary my-2'><span className='text-black '>Price</span> : {cls.price} <span className='text-black'>₹</span></h1>
-                                                            <h1 className='text-secondary my-2'><span className='text-black '>Submitted</span> : <span className=''>{cls.submitted ? moment(cls.submitted).format('MMMM Do YYYY') : 'Not Get Data'}</span></h1>
-                                                        </div>
+                                        <div className="bg-white flex  rounded-lg gap-8  shadow p-4">
+                                            <div className="">
+                                                <img className='max-h-[200px] max-w-[300px]' src={cls.image} alt="" />
+                                            </div>
+                                            <div className="w-full">
+                                                <h1 className='text-[21px] font-bold text-secondary border-b pb-2 mb-2'>{cls.name}</h1>
+                                                <div className="flex gap-5">
+                                                    <div className="w-full">
+                                                        <h1 className='font-bold mb-3'>Some Info : </h1>
+                                                        <h1 className='text-secondary my-2'><span className='text-black '>Total Student</span> : {cls.totalEnrolled ? cls.totalEnrolled : 0}</h1>
+                                                        <h1 className='text-secondary'><span className='text-black '>Total Seats</span> : {cls.availableSeats}</h1>
+                                                        <h1 className='text-secondary my-2'><span className='text-black '>Status</span> : <span className={`font-bold ${cls.status === 'pending' ? 'text-orange-400' : cls.status === 'checking' ? 'text-yellow-300' : cls.status === 'approved' ? 'text-green-500' : 'text-red-600'}`}>{cls.status}</span></h1>
+                                                    </div>
+                                                    <div className="">
+                                                        <h1 className='font-bold mb-3'>{cls.description}</h1>
+                                                        <h1 className='text-secondary my-2'><span className='text-black '>Price</span> : {cls.price} <span className='text-black'>₹</span></h1>
+                                                        <h1 className='text-secondary my-2'><span className='text-black '>Submitted</span> : <span className=''>{cls.submitted ? moment(cls.submitted).format('MMMM Do YYYY') : 'Not Get Data'}</span></h1>
                                                     </div>
                                                 </div>
                                             </div>
-                                       // </Slide>
+                                        </div>
+                                        // </Slide>
                                     ))}
                             </div>
                     }

@@ -11,7 +11,7 @@ const Footer = () => {
                         Want us to email you with the latest blockbuster news?
                     </strong>
 
-                    <form  className="mt-6">
+                    <form className="mt-6">
                         <div className="relative max-w-lg">
                             <label className="sr-only" htmlFor="email"> Email </label>
 
@@ -157,13 +157,13 @@ const Footer = () => {
                                 className="mt-6 flex flex-col space-y-1"
                             >
                                 <a className="text-secondary dark:text-white dark:hover:text-secondary transition hover:text-secondary dark:/75" href="/">
-                                Rock and Yoga
+                                    Rock and Yoga
                                 </a>
                                 <a className="text-secondary dark:text-white dark:hover:text-secondary transition hover:text-secondary dark:/75" href="/">
                                     Healthy Diet
                                 </a>
                                 <a className="text-secondary dark:text-white dark:hover:text-secondary transition hover:text-secondary dark:/75" href="/">
-                                Fit to health
+                                    Fit to health
                                 </a>
                                 <a className="text-secondary dark:text-white dark:hover:text-secondary transition hover:text-secondary dark:/75" href="/">
                                     Exercise

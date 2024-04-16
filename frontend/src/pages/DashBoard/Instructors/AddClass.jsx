@@ -30,13 +30,13 @@ const AddClass = () => {
                         newData.instructorName = currentUser.name;
                         newData.instructorEmail = currentUser.email;
                         newData.status = 'pending';
-                        newData.submitted = new Date(); 
+                        newData.submitted = new Date();
                         newData.totalEnrolled = 0;
                         // console.log(newData);
-                        axiosSecure.post('/new-class' , newData)
-                        .then(res => {
-                            console.log(res.data);
-                        })
+                        axiosSecure.post('/new-class', newData)
+                            .then(res => {
+                                console.log(res.data);
+                            })
 
                     }
                 }),
@@ -159,7 +159,7 @@ const AddClass = () => {
                 </div>
                 <div className="mb-6">
                     <label className="block text-gray-700 font-bold mb-2" htmlFor="price">
-                        Description About your course 
+                        Description About your course
                     </label>
                     <textarea placeholder='Description about your course' name="description" className='resize-none border w-full p-2 rounded-lg  border-secondary outline-none' rows="4"></textarea>
                 </div>

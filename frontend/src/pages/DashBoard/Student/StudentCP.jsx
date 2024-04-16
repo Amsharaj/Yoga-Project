@@ -16,16 +16,16 @@ const StudentCP = () => {
                     <h1 className='font-bold'>You jump any page you want from here . </h1>
                     <div className="flex items-center justify-center my-4 gap-3">
                         <div className="border border-secondary rounded-lg hover:bg-secondary hover:text-white duration-200 px-2 py-1">
-                            <Link  to='/dashboard/enrolled-class'>My Enroll</Link>
+                            <Link to='/dashboard/enrolled-class'>My Enroll</Link>
                         </div>
                         <div className="border border-secondary rounded-lg hover:bg-secondary hover:text-white duration-200 px-2 py-1">
-                            <Link  to='/dashboard/my-selected'>My Selected</Link>
+                            <Link to='/dashboard/my-selected'>My Selected</Link>
                         </div>
                         <div className="border border-secondary rounded-lg hover:bg-secondary hover:text-white duration-200 px-2 py-1">
-                            <Link  to='/dashboard/my-payments'>Payment History</Link>
+                            <Link to='/dashboard/my-payments'>Payment History</Link>
                         </div>
                         <div className="border border-secondary rounded-lg hover:bg-secondary hover:text-white duration-200 px-2 py-1">
-                            <Link  to='/dashboard/apply-instructor'>Join as a Instructor</Link>
+                            <Link to='/dashboard/apply-instructor'>Join as a Instructor</Link>
                         </div>
                     </div>
                 </div>

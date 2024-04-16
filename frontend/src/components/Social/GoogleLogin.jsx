@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 const GoogleLogin = () => {
     const { googleLogin } = useAuth()
-    const navigate=useNavigate()
+    const navigate = useNavigate()
     const handleLogin = () => {
         googleLogin().then((userCredential) => {
             const user = userCredential.user
@@ -19,13 +19,13 @@ const GoogleLogin = () => {
                     gender: "Is not Specified",
                     address: "Is not Specified",
                     phone: "Is not Specified"
-                    
+
                 }
-                if(user.email && user.displayName){
-                    return axios.post('https://yoga-project.onrender.com/new-user',userImp).then(()=>{
-                      navigate('/')  
-                      return "Registration Successfully"
-                    }).catch((err)=>{
+                if (user.email && user.displayName) {
+                    return axios.post('https://yoga-project.onrender.com/new-user', userImp).then(() => {
+                        navigate('/')
+                        return "Registration Successfully"
+                    }).catch((err) => {
                         throw new Error(err)
                     })
                 }

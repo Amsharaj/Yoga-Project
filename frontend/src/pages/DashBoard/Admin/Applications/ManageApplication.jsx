@@ -47,26 +47,26 @@ const ManageApplications = () => {
   });
   const handleDelete = (id) => {
     Swal.fire({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, Reject it!'
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, Reject it!'
     }).then((result) => {
-        if (result.isConfirmed) {
-            axiosSecure.delete(`/delete-application/${id}`)
-            .then(res => { 
-                console.log(res.data)
-                
-            })
-            .catch(err => console.log(err))
+      if (result.isConfirmed) {
+        axiosSecure.delete(`/delete-application/${id}`)
+          .then(res => {
+            console.log(res.data)
+
+          })
+          .catch(err => console.log(err))
 
 
-        }
+      }
     })
-}
+  }
 
 
 

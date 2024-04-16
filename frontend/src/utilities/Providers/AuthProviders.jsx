@@ -4,39 +4,39 @@ import { Auth } from '../../config/firebase.config'
 import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth'
 import axios from 'axios'
 
-export const AuthContext=createContext()
+export const AuthContext = createContext()
 
-const AuthProviders = ({children}) => {
-    const [user,setUser]=useState(null)
-    const [loader,setLoader]=useState(true)
-    const [error,setError]=useState('')
-    
+const AuthProviders = ({ children }) => {
+    const [user, setUser] = useState(null)
+    const [loader, setLoader] = useState(true)
+    const [error, setError] = useState('')
+
     //signup new user
 
-    const signUp=async(email,password)=>{
-        try{
+    const signUp = async (email, password) => {
+        try {
             setLoader(true)
-            return await createUserWithEmailAndPassword(Auth,email,password)
-        }catch(error){
+            return await createUserWithEmailAndPassword(Auth, email, password)
+        } catch (error) {
             setError(error.code)
             throw error
         }
     }
 
     //login user
-    const login =async(email,password)=>{
-        try{
+    const login = async (email, password) => {
+        try {
             setLoader(true)
-            return await signInWithEmailAndPassword(Auth,email,password)
+            return await signInWithEmailAndPassword(Auth, email, password)
 
-        }catch(error){
+        } catch (error) {
             setError(error.code)
             throw error
         }
     }
 
     //logout user
-    const logout=async()=>{
+    const logout = async () => {
         try {
             return await signOut(Auth)
         } catch (error) {
@@ -46,24 +46,24 @@ const AuthProviders = ({children}) => {
     }
     //update user profile
 
-    const updateUser=async(name,photo)=>{
+    const updateUser = async (name, photo) => {
         try {
-            await updateProfile(Auth.currentUser,{
-                displayName: name, photoURL:photo
+            await updateProfile(Auth.currentUser, {
+                displayName: name, photoURL: photo
             })
             setUser(Auth.currentUser)
         } catch (error) {
             setError(error.code)
             throw error
         }
-    } 
+    }
 
     //google Login
-    const googleprovider=new GoogleAuthProvider()
-    const googleLogin =async()=>{
+    const googleprovider = new GoogleAuthProvider()
+    const googleLogin = async () => {
         try {
             setLoader(true)
-           return await signInWithPopup(Auth,googleprovider)
+            return await signInWithPopup(Auth, googleprovider)
         } catch (error) {
             setError(error.code)
             throw error
@@ -72,32 +72,32 @@ const AuthProviders = ({children}) => {
 
     //observe for users
 
-    useEffect(()=>{
-        const unsubscribe=Auth.onAuthStateChanged((user)=>{
+    useEffect(() => {
+        const unsubscribe = Auth.onAuthStateChanged((user) => {
             setUser(user)
-            if(user){
-               // https://yoga-project.onrender.com
-                axios.post('https://yoga-project.onrender.com/api/set-token',{email:user.email,name:user.displayName})
-                .then((data)=>{
-                    if(data.data.token){
-                        localStorage.setItem('token',data.data.token )
-                        setLoader(false)
-                    }
-                })
-            }else{
+            if (user) {
+                // https://yoga-project.onrender.com
+                axios.post('https://yoga-project.onrender.com/api/set-token', { email: user.email, name: user.displayName })
+                    .then((data) => {
+                        if (data.data.token) {
+                            localStorage.setItem('token', data.data.token)
+                            setLoader(false)
+                        }
+                    })
+            } else {
                 localStorage.removeItem('token')
                 setLoader(false)
             }
         })
-        return()=>unsubscribe()
-    },[])
+        return () => unsubscribe()
+    }, [])
 
-    const contextvalue={user,signUp,login,logout,updateUser,googleLogin,error,setError,loader,setLoader}
-  return (
-    <AuthContext.Provider value={contextvalue}>
-        {children}
-    </AuthContext.Provider>
-  )
-} 
+    const contextvalue = { user, signUp, login, logout, updateUser, googleLogin, error, setError, loader, setLoader }
+    return (
+        <AuthContext.Provider value={contextvalue}>
+            {children}
+        </AuthContext.Provider>
+    )
+}
 
 export default AuthProviders
